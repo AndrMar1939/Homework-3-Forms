@@ -1,0 +1,317 @@
+/* додатково обнулив інпути */
+input {
+  all: unset;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* основна частина */
+.wrapper {
+  width: 820px;
+  height: 950px;
+  padding: 50px 11px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+.title {
+  font-size: 32px;
+  margin-bottom: 50px;
+  margin-left: -1px;
+}
+
+.label-full-name, .label-mail, .label-tel-number, .label-country {
+  display: block;
+  margin-bottom: 13px;
+}
+
+/* у даному блоці не догадавсь прописати border sizing, тому відіймав падінги */
+
+#full-name, #mail, #tel-number, #country {
+  display: block;
+  box-sizing: border-box;
+  width: 800px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #e6e6e6;
+  border: 2px solid #808080;
+  padding-left: 20px;
+  font-size: 24px;
+}
+#full-name {
+  margin-bottom: 39px;
+}
+#mail {
+  margin-bottom: 35px;
+}
+#tel-number {
+  margin-bottom: 34px;
+}
+#country {
+  padding-left: 15px;
+  margin-bottom: 39px;
+  width: 800px;
+  height: 60px;  
+  /* тут все відповідає макету, падінг і бордер не зменшує розмір */
+}
+
+/*________________________________________________________________роблю кастомні радіо кнопки*______________________________________________*/
+
+
+.radio-buttons-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.radio-button-style {
+  margin-right: 1px;
+}
+.radio-button-style ~ label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Box */
+.radio-button-style ~ label:before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  background-color: #e6e6e6;
+  border: 2px solid #808080;
+}
+
+/* Box hover */
+.radio-button-style:hover ~ label:before {
+  background: white;
+}
+
+/* Box focus */
+.radio-button-style:focus ~ label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+}
+
+/* Box checked */
+.radio-button-style:checked ~ label:before {
+  background: #e6e6e6;
+}
+
+/* Disabled state label */
+.radio-button-style:disabled ~ label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+
+/* Disabled box */
+.radio-button-style:disabled ~ label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+
+/* Checkmark. Could be replaced with an image */
+.radio-button-style:checked ~ label:after {
+  content: '';
+  position: absolute;
+  vertical-align: text-top;
+  left: 6.25px;
+  top: 5px;
+  background: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: #808080;
+  border: 0px solid #808080;
+}
+
+.box-for-radio {
+  margin-bottom: 12px;
+}
+.box-for-radio:last-child {
+  margin-bottom: 40px;
+}
+/* ----------------заголовок коментарів і його нижній відступ-------------------------------------  */
+.label-comments {
+  display: block;
+  margin-bottom: 12px;
+}
+#comments {
+  display: block;
+  width: 776px; 
+  /* така ширина, бо відняв 2 бордери по 2 пікселя і паддінг 20 */
+  height: 96px;
+  border-radius: 8px;
+  background-color: #e6e6e6;
+  border: 2px solid #808080;
+  padding-left: 20px;
+  font-size: 14px; 
+  margin-bottom: 22px;
+}
+
+/* --------------------checkbox---------------------------checkbox-------------------------------------------check box */
+
+.text-decoration-none {
+  text-decoration: none;
+}
+.text-decoration-none:hover {
+  text-decoration-line: underline;
+}
+
+
+.styled-checkbox {
+  position: absolute; 
+  opacity: 0; 
+}
+.styled-checkbox ~ label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Box */
+.styled-checkbox ~ label:before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #e6e6e6;
+  border: 2px solid #808080;
+  
+}
+
+/* Box hover */
+.styled-checkbox:hover ~ label:before {
+  background-color: #959595;;
+}
+
+/* Box checked */
+.styled-checkbox:checked ~ label:before {
+  background-color: #909090;
+}
+
+/* Disabled state label */
+.styled-checkbox:disabled ~ label {
+  color: #b8b8b8;
+  cursor: auto;
+}
+
+/* Disabled box */
+.styled-checkbox:disabled ~ label:before {
+  box-shadow: none;
+  background: #ddd;
+}
+
+/* Checkmark. Could be replaced with an image */
+.styled-checkbox:checked ~ label:after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 
+    2px 0 0 white,
+    4px 0 0 white,
+    4px -2px 0 white,
+    4px -4px 0 white,
+    4px -6px 0 white,
+    4px -8px 0 white;
+  transform: rotate(45deg);
+}
+
+.checkbox-container {
+  margin-bottom: 47px;
+}
+/* -----------------submit---------------------------reset------------------------- */
+
+
+.button-general {
+  display: block;
+  box-sizing: border-box;
+  width: 360px;
+  height: 75px;
+  border-radius: 8px;
+  font-size: 24px;
+  text-align: start;
+  margin-bottom: 80px;
+}
+.reset-button {
+  background-color: #e6e6e6;
+  color: #808080;
+  padding-left: 108px;
+}
+
+.submit-button {
+  color: #ffffff;
+  background-color: #000000;
+  padding-left: 106px;
+}
+.box-buttons {
+  display: flex;
+}
+.box-buttons-item {
+  margin-right: 83px;
+}
+.box-buttons-item:last-child {
+  margin-right: 0;
+}
