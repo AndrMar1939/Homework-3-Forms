@@ -1,4 +1,4 @@
-/* додатково обнулив інпути */
+/* reset input */
 input {
   all: unset;
 }
@@ -56,12 +56,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+
+
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* основна частина */
+/* main part */
 .wrapper {
-  width: 820px;
-  height: 950px;
-  padding: 50px 11px;
+  width: 1440px; 
+  padding: 50px 10px;
   font-size: 20px;
   font-weight: 400;
   font-family: 'Roboto', sans-serif;
@@ -69,17 +72,14 @@ table {
 .title {
   font-size: 32px;
   margin-bottom: 50px;
-  margin-left: -1px;
 }
 
-.label-full-name, .label-mail, .label-tel-number, .label-country {
+.label-general {
   display: block;
   margin-bottom: 13px;
 }
 
-/* у даному блоці не догадавсь прописати border sizing, тому відіймав падінги */
-
-#full-name, #mail, #tel-number, #country {
+.input-general, .textarea-general {
   display: block;
   box-sizing: border-box;
   width: 800px;
@@ -87,27 +87,12 @@ table {
   border-radius: 8px;
   background-color: #e6e6e6;
   border: 2px solid #808080;
-  padding-left: 20px;
+  padding: 0 20px;
   font-size: 24px;
-}
-#full-name {
-  margin-bottom: 39px;
-}
-#mail {
-  margin-bottom: 35px;
-}
-#tel-number {
-  margin-bottom: 34px;
-}
-#country {
-  padding-left: 15px;
-  margin-bottom: 39px;
-  width: 800px;
-  height: 60px;  
-  /* тут все відповідає макету, падінг і бордер не зменшує розмір */
+  margin-bottom: 36px;
 }
 
-/*________________________________________________________________роблю кастомні радіо кнопки*______________________________________________*/
+/*_____________________________________________________________custom radio buttons______________________________________________*/
 
 
 .radio-buttons-title {
@@ -127,6 +112,7 @@ table {
 /* Box */
 .radio-button-style ~ label:before {
   content: '';
+  position: relative;
   margin-right: 10px;
   display: inline-block;
   vertical-align: middle;
@@ -169,10 +155,8 @@ table {
 .radio-button-style:checked ~ label:after {
   content: '';
   position: absolute;
-  vertical-align: text-top;
-  left: 6.25px;
+  left: 6px;
   top: 5px;
-  background: white;
   width: 18px;
   height: 18px;
   border-radius: 9px;
@@ -183,31 +167,37 @@ table {
 .box-for-radio {
   margin-bottom: 12px;
 }
-.box-for-radio:last-child {
+
+.second-box-for-radio {
   margin-bottom: 40px;
 }
-/* ----------------заголовок коментарів і його нижній відступ-------------------------------------  */
+
+
+
+
+/* ----------------coments header------------------------------------  */
 .label-comments {
   display: block;
   margin-bottom: 12px;
 }
-#comments {
+.textarea-general {
   display: block;
-  width: 776px; 
-  /* така ширина, бо відняв 2 бордери по 2 пікселя і паддінг 20 */
-  height: 96px;
-  border-radius: 8px;
-  background-color: #e6e6e6;
-  border: 2px solid #808080;
-  padding-left: 20px;
+  height: 100px;
+  padding: 20px;
   font-size: 14px; 
   margin-bottom: 22px;
 }
+
+
+
+
+
 
 /* --------------------checkbox---------------------------checkbox-------------------------------------------check box */
 
 .text-decoration-none {
   text-decoration: none;
+  color: #595990;
 }
 .text-decoration-none:hover {
   text-decoration-line: underline;
@@ -292,19 +282,17 @@ table {
   height: 75px;
   border-radius: 8px;
   font-size: 24px;
-  text-align: start;
+  text-align: center;
   margin-bottom: 80px;
 }
 .reset-button {
   background-color: #e6e6e6;
   color: #808080;
-  padding-left: 108px;
 }
 
 .submit-button {
   color: #ffffff;
   background-color: #000000;
-  padding-left: 106px;
 }
 .box-buttons {
   display: flex;
